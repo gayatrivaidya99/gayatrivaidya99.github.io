@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Gayatri Vaidya — PhD researcher in Information Technology at George Mason University, building AI systems for emergency management and flood evacuation intelligence.">
+<meta property="og:title" content="Gayatri Vaidya">
+<meta property="og:description" content="PhD researcher at George Mason University · AI for emergency management · Evac-AI flood evacuation intelligence.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<title>Gayatri Vaidya</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231a2744'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' fill='%23fff' text-anchor='middle'%3EGV%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #1a2744;
+  --red: #b52b27;
+  --text: #1c1c1e;
+  --muted: #5a5a6a;
+  --faint: #909099;
+  --bg: #fff;
+  --bdr: #e4e4ec;
+  --sans: 'Inter', system-ui, sans-serif;
+  --serif: 'Source Serif 4', Georgia, serif;
+  --display: 'Playfair Display', var(--serif);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --navy: #7f9adb; --red: #e2726d; --text: #e8e8ec; --muted: #a4a4b4;
+    --faint: #75758a; --bg: #14141a; --bdr: #2a2a36;
+  }
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); color: var(--text); background: var(--bg); font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+a { color: var(--red); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; border-radius: 2px; }
+code { font-family: monospace; font-size: 12px; background: #f0f0f4; padding: 0.1rem 0.35rem; border-radius: 3px; color: var(--muted); }
+@media (prefers-color-scheme: dark) { code { background: #1c1c26; } }
+@media (prefers-reduced-motion: no-preference) {
+  .sec { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
+  .sec.in-view { opacity: 1; transform: translateY(0); }
+}
+
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--bdr);
+  padding: 0 2rem;
+}
+.nav-inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; height: 50px; }
+.nav-brand { font-size: 13px; font-weight: 600; color: var(--navy); margin-right: auto; letter-spacing: 0.01em; }
+nav a.nl {
+  font-size: 12.5px; color: var(--muted);
+  padding: 0 0.65rem; height: 50px;
+  display: flex; align-items: center;
+  border-bottom: 2px solid transparent;
+  transition: color .15s, border-color .15s;
+}
+nav a.nl:hover, nav a.nl.active { color: var(--navy); border-bottom-color: var(--red); text-decoration: none; }
+
+.page { max-width: 1060px; margin: 0 auto; padding: 3rem 2rem; }
+
+.hero {
+  display: grid; grid-template-columns: 1fr 200px; gap: 2.75rem; align-items: start;
+  position: relative; padding: 1.5rem 2rem 2.25rem; margin: -1.5rem -2rem 0;
+  background: radial-gradient(ellipse 900px 420px at 15% 0%, color-mix(in srgb, var(--navy) 7%, transparent), transparent 70%);
+}
+h1 {
+  font-family: var(--display); font-size: 2.6rem; font-weight: 500; font-style: normal;
+  color: var(--navy); line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 0.55rem;
+}
+.hero-role {
+  font-family: var(--serif); font-style: italic; font-size: 14.5px; color: var(--muted);
+  margin-bottom: 1.5rem; padding-bottom: 1.5rem; position: relative;
+}
+.hero-role::after {
+  content: ''; position: absolute; left: 0; bottom: 0; width: 42px; height: 2px;
+  background: var(--red); border-radius: 2px;
+}
+.hero-bio { font-size: 15px; line-height: 1.8; }
+.hero-bio p + p { margin-top: 0.9rem; }
+.hero-bio a { color: var(--red); }
+.hero-bio em { font-style: italic; }
+.hero-links { margin-top: 1.25rem; display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.hero-links a {
+  font-size: 12px; font-weight: 500; color: var(--navy);
+  border: 1px solid var(--navy); padding: 0.42rem 0.95rem; border-radius: 999px;
+  transition: background .2s, color .2s, box-shadow .2s, transform .2s;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+}
+.hero-links a:hover {
+  background: var(--navy); color: #fff; text-decoration: none;
+  box-shadow: 0 6px 16px -4px color-mix(in srgb, var(--navy) 45%, transparent);
+  transform: translateY(-1px);
+}
+.hero-links svg, .socials svg { width: 13px; height: 13px; flex-shrink: 0; }
+.photo-col { display: flex; flex-direction: column; align-items: center; gap: 1.1rem; }
+.photo-box {
+  width: 168px; height: 168px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy), #3a4d78 55%, var(--red));
+  box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 16px 32px -12px color-mix(in srgb, var(--navy) 55%, transparent),
+    0 0 0 6px color-mix(in srgb, var(--navy) 6%, transparent);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-family: var(--display); font-weight: 500; font-size: 3rem; letter-spacing: 0.01em;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.photo-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 20px 36px -10px color-mix(in srgb, var(--navy) 60%, transparent),
+    0 0 0 6px color-mix(in srgb, var(--navy) 6%, transparent);
+}
+.socials { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem; }
+.socials a {
+  font-size: 11px; color: var(--muted);
+  border: 1px solid var(--bdr); padding: 0.28rem 0.6rem; border-radius: 999px;
+  transition: color .15s, border-color .15s, background .15s;
+  display: inline-flex; align-items: center; gap: 0.35rem;
+}
+.socials a:hover { color: var(--navy); border-color: var(--navy); background: color-mix(in srgb, var(--navy) 6%, transparent); text-decoration: none; }
+
+.sec { margin-top: 3.5rem; }
+.sec-title {
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--navy);
+  display: flex; align-items: center; gap: 0.6rem;
+  margin-bottom: 1.3rem;
+}
+.sec-title::after { content: ''; flex: 1; height: 1px; background: var(--bdr); }
+.sec-title::before { content: ''; width: 14px; height: 2px; background: var(--red); border-radius: 2px; flex-shrink: 0; }
+
+/* news */
+.ntable { width: 100%; border-collapse: collapse; }
+.ntable tr + tr td { border-top: 1px solid var(--bdr); }
+.ntable td { padding: 0.75rem 0; vertical-align: top; }
+.nd { width: 80px; min-width: 80px; padding-right: 1.2rem; padding-top: 0.85rem; font-size: 11px; font-weight: 600; color: var(--faint); white-space: nowrap; }
+.nb { font-size: 14px; line-height: 1.65; }
+.nb a { color: var(--red); }
+.nb strong { color: var(--navy); }
+
+/* entries */
+.entry {
+  padding: 0.95rem 0 0.95rem 0.9rem; border-bottom: 1px solid var(--bdr);
+  border-left: 2px solid transparent; margin-left: -0.9rem;
+  transition: border-color .2s, background .2s;
+}
+.entry:hover { border-left-color: var(--red); background: color-mix(in srgb, var(--navy) 2.5%, transparent); }
+.entry:last-child { border-bottom: none; }
+.entry-top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+.entry-title { font-size: 14px; font-weight: 600; color: var(--navy); line-height: 1.4; }
+.entry-year { font-size: 12px; color: var(--faint); white-space: nowrap; flex-shrink: 0; }
+.entry-sub { font-size: 13px; color: var(--muted); font-style: italic; margin-top: 0.15rem; }
+.entry-body { font-size: 13px; color: var(--muted); margin-top: 0.4rem; line-height: 1.65; }
+.entry-body ul { padding-left: 1.1rem; margin-top: 0.3rem; }
+.entry-body li { margin-bottom: 0.25rem; }
+.entry-body em { font-style: italic; color: var(--text); }
+.entry-body strong { color: var(--navy); font-weight: 600; }
+
+/* publications */
+.pub {
+  padding: 0.95rem 0 0.95rem 0.9rem; border-bottom: 1px solid var(--bdr);
+  border-left: 2px solid transparent; margin-left: -0.9rem;
+  transition: border-color .2s, background .2s;
+}
+.pub:hover { border-left-color: var(--red); background: color-mix(in srgb, var(--navy) 2.5%, transparent); }
+.pub:last-child { border-bottom: none; }
+.pub-venue { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--red); margin-bottom: 0.25rem; }
+.pub-title { font-size: 14px; font-weight: 500; color: var(--navy); line-height: 1.5; margin-bottom: 0.2rem; }
+.pub-authors { font-size: 12px; color: var(--muted); font-style: italic; }
+.pub-authors strong { font-style: normal; font-weight: 600; color: var(--text); }
+
+/* skills grid */
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; }
+.skill-group {
+  padding: 0.85rem 1.1rem; border: 1px solid var(--bdr); border-radius: 8px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.skill-group:hover { border-color: color-mix(in srgb, var(--navy) 35%, var(--bdr)); box-shadow: 0 4px 14px -6px rgba(0,0,0,.08); }
+.skill-label { font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--navy); margin-bottom: 0.5rem; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.skill-tag {
+  font-size: 11px; color: var(--navy);
+  background: color-mix(in srgb, var(--navy) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--navy) 12%, transparent);
+  padding: 0.2rem 0.55rem; border-radius: 999px;
+  transition: background .15s, border-color .15s;
+}
+.skill-tag:hover { background: color-mix(in srgb, var(--navy) 12%, transparent); }
+
+/* certifications */
+.cert-row {
+  display: flex; justify-content: space-between; align-items: baseline; font-size: 13px;
+  padding: 0.6rem 0.5rem; border-bottom: 1px solid var(--bdr); border-radius: 4px;
+  transition: background .15s;
+}
+.cert-row:hover { background: color-mix(in srgb, var(--navy) 3%, transparent); }
+.cert-row:last-child { border-bottom: none; }
+.cert-name { color: var(--text); }
+.cert-issuer { color: var(--faint); font-size: 12px; }
+
+footer {
+  margin-top: 4.5rem; padding-top: 1.75rem; position: relative;
+  font-size: 12px; color: var(--faint); text-align: center;
+}
+footer::before {
+  content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 60px; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--red), transparent);
+}
+
+@media (max-width: 700px) {
+  .hero { grid-template-columns: 1fr; padding: 1.25rem 1.25rem 1.75rem; margin: -1.5rem -1.25rem 0; }
+  h1 { font-size: 2rem; }
+  .photo-col { flex-direction: row; align-items: flex-start; }
+  .photo-box { width: 84px; height: 84px; font-size: 1.6rem; }
+  nav a.nl { padding: 0 0.35rem; font-size: 11px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-brand">Gayatri Vaidya</span>
+    <a href="#about" class="nl active">About</a>
+    <a href="#news" class="nl">News</a>
+    <a href="#publications" class="nl">Publications</a>
+    <a href="#education" class="nl">Education</a>
+    <a href="#experience" class="nl">Experience</a>
+    <a href="#projects" class="nl">Projects</a>
+    <a href="#skills" class="nl">Skills</a>
+    <a href="#certifications" class="nl">Certifications</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="hero">
+      <div>
+        <h1>Gayatri Vaidya</h1>
+        <p class="hero-role">PhD Researcher · George Mason University · Humanitarian Informatics Lab · Fairfax, VA</p>
+        <div class="hero-bio">
+          <p>
+            Gayatri Vaidya is a PhD researcher in Information Technology at
+            <a href="https://www.gmu.edu">George Mason University</a>, advised by
+            <a href="https://mason.gmu.edu/~hpurohit/">Dr. Hemant Purohit</a>.
+            My research focuses on how AI systems can support emergency management — building tools that help first responders and affected communities navigate crises through structured knowledge and natural language interfaces.
+          </p>
+          <p>
+            I develop <em>Evac-AI</em>, a conversational AI system for flood evacuation intelligence in Virginia Beach,
+            combining a Neo4j knowledge graph, local LLM inference (Ollama, llama3.1:8b), and a SetFit fine-tuned
+            intent classifier to answer natural language queries about flood risk zones, evacuation routes, and emergency
+            shelters — grounded in real government data from FEMA, NOAA, VDEM, and Virginia Beach GIS.
+          </p>
+          <p>
+            A parallel project transforms the Virginia Beach Emergency Operations Plan into a structured inter-agency
+            coordination knowledge graph using spaCy-based NER and LLM-based triple extraction.
+          </p>
+          <p>
+            Prior to my PhD, I worked as a Packaged App Development Analyst at Accenture, building scalable
+            ETL/ELT pipelines. I hold an MS in Computer Science from GMU (2025).
+          </p>
+        </div>
+        <div class="hero-links">
+          <a href="https://www.linkedin.com/in/gayatri-vaidya/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/gayatrivaidya99/vb-flood" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.4 9.4 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+            GitHub
+          </a>
+          <a href="#">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+            Curriculum Vitae
+          </a>
+        </div>
+      </div>
+      <div class="photo-col">
+        <div class="photo-box" aria-hidden="true">GV</div>
+        <div class="socials">
+          <a href="mailto:gvaidya2@gmu.edu" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+            Email
+          </a>
+          <a href="https://github.com/gayatrivaidya99" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.4 9.4 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/grvaidya/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+            LinkedIn
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="Google Scholar">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+            Scholar
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section id="news" class="sec">
+    <div class="sec-title">News</div>
+    <table class="ntable">
+      <tbody>
+        <tr>
+          <td class="nd">Jan 2026</td>
+          <td class="nb">Started PhD in Information Technology at George Mason University. Continuing NSF-funded emergency management AI research under Dr. Hemant Purohit.</td>
+        </tr>
+        <tr>
+          <td class="nd">May 2025</td>
+          <td class="nb">Completed MS in Computer Science at George Mason University.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications" class="sec">
+    <div class="sec-title">Publications</div>
+
+    <div class="pub">
+      <div class="pub-venue"></div>
+      <div class="pub-title">Coming soon</div>
+      <div class="pub-authors"></div>
+    </div>
+
+    <!-- <div class="pub">
+      <div class="pub-venue"></div>
+      <div class="pub-title"></div>
+      <div class="pub-authors"><strong></div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-venue"></div>
+      <div class="pub-title"></div>
+      <div class="pub-authors"></div>
+    </div> -->
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="sec">
+    <div class="sec-title">Education</div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">PhD · Information Technology</div>
+        <div class="entry-year">Jan 2026 – Present</div>
+      </div>
+      <div class="entry-sub">George Mason University · Fairfax, VA</div>
+      <div class="entry-body">
+        Research focus: <em>AI-Driven Conversational Systems for Flood Evacuation Intelligence</em><br>
+        Advisor: Dr. Hemant Purohit · NSF-funded research
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">Master of Science · Computer Science</div>
+        <div class="entry-year">Aug 2023 – May 2025</div>
+      </div>
+      <div class="entry-sub">George Mason University · Fairfax, VA</div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="sec">
+    <div class="sec-title">Experience</div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">Graduate Teaching Assistant · Interpretable Machine Learning</div>
+        <div class="entry-year">Jan 2026 – May 2026</div>
+      </div>
+      <div class="entry-sub">George Mason University · Fairfax, VA</div>
+      <div class="entry-body">
+        Course: <em>AIT 636 – Interpretable Machine Learning</em> · Information Sciences &amp; Technology
+        <ul>
+          <li>Held office hours and lab sessions covering interpretable models — decision trees, decision rules, and linear regression — and model-agnostic methods for explaining black-box models, such as feature importance.</li>
+          <li>Graded assignments and projects, giving feedback on model interpretability techniques and comparisons between interpretable and black-box approaches.</li>
+          <li>Helped students implement and evaluate interpretable models in Python (Scikit-learn) and troubleshoot model-agnostic interpretation code.</li>
+          <li>Supported the instructor with course material updates and clarified interpretability concepts during discussion sessions.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">Research Assistant · Doctoral Research (IT-796)</div>
+        <div class="entry-year">Nov 2025 – Present</div>
+      </div>
+      <div class="entry-sub">George Mason University · Fairfax, VA</div>
+      <div class="entry-body">
+        <ul>
+          <li>Developing a system to transform complex policy and planning documents into structured representations using spaCy-based NER and custom extraction logic to support emergency response analysis.</li>
+          <li>Processing and integrating heterogeneous datasets related to emergency planning and infrastructure systems using Python-based data workflows.</li>
+          <li>Designing analytical workflows to examine system-level responses under simulated disruption scenarios, summarizing findings through structured outputs and visual representations.</li>
+          <li>Documenting data pipelines, modeling assumptions, and processing logic to ensure reproducibility within NSF-funded research initiatives.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">Teaching Assistant &amp; Research Assistant · Computational Data Science</div>
+        <div class="entry-year">Aug 2024 – Dec 2026</div>
+      </div>
+      <div class="entry-sub">George Mason University · Fairfax, VA</div>
+      <div class="entry-body">
+        Courses: <em>CDS 230 – Modeling &amp; Simulation</em> &middot; <em>CDS 303 – Data Mining</em>
+        <ul>
+          <li>Led lab sessions and held office hours for CDS 230 and CDS 303, helping students apply modeling, simulation, and data mining methods to real-world datasets.</li>
+          <li>Designed and graded assignments, quizzes, and course projects; gave feedback on model design, simulation logic, clustering, and classification techniques.</li>
+          <li>Debugged student Python code and clarified core programming concepts using NumPy, Pandas, and Scikit-learn for simulation and modeling assignments.</li>
+          <li>Guided students through data mining algorithms and workflows — classification, clustering, association rule mining, and model evaluation applied to real-world datasets.</li>
+          <li>Collaborated with course faculty to develop and update lecture materials, example notebooks, and grading rubrics each semester.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">Packaged App Development Analyst</div>
+        <div class="entry-year">Aug 2021 – Aug 2023</div>
+      </div>
+      <div class="entry-sub">Accenture Solutions · India</div>
+      <div class="entry-body">
+        <ul>
+          <li>Built scalable ETL/ELT pipelines in Azure Data Factory and Databricks, integrating data from ERP, CRM, and flat file systems into Snowflake and Azure SQL, supporting real-time analytics.</li>
+          <li>Designed data integrations across transaction systems using SQL and Python, improving data refresh cycles by <strong>30%</strong>.</li>
+          <li>Developed and maintained data models (Star and Snowflake schemas); optimized PostgreSQL and SQL Server queries, improving OLAP reporting performance by <strong>40%</strong>.</li>
+          <li>Performed data profiling, validation, and quality checks using Python and SQL, increasing dataset reliability by <strong>99.5%</strong>.</li>
+          <li>Delivered insights through curated datasets and Power BI dashboards in cross-functional sprints with analysts and architects.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">Data Engineer Intern</div>
+        <div class="entry-year">May 2020 – Dec 2020</div>
+      </div>
+      <div class="entry-sub">IT Networkz Solutions · India</div>
+      <div class="entry-body">
+        <ul>
+          <li>Assisted in designing SQL-based ingestion workflows and file-to-database pipelines, reducing manual processing effort by <strong>8+ hours weekly</strong>.</li>
+          <li>Collaborated with senior engineers to document workflows and troubleshoot pipeline issues, improving uptime and reliability.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="sec">
+    <div class="sec-title">Projects</div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">Evac-AI: Flood Evacuation Intelligence Chatbot</div>
+        <div class="entry-year">2025 – 2026</div>
+      </div>
+      <div class="entry-sub">Neo4j · FastAPI · Ollama (llama3.1:8b) · SetFit · Leaflet.js · Cloudflare Tunnel</div>
+      <div class="entry-body">
+        Conversational AI system for Virginia Beach flood risk, evacuation zone, and shelter queries. Multi-stage pipeline: SetFit intent classifier → slot filling → Cypher generation → multi-layer validation → HITL gap logging → verbalized answer generation. Grounded in FEMA NFHL, NOAA, VDEM, and VB GIS data.
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">EOP Knowledge Graph: Inter-Agency Coordination Extraction</div>
+        <div class="entry-year">2025 – 2026</div>
+      </div>
+      <div class="entry-sub">llama3.1:8b · spaCy · schwartz_hearst · Neo4j · pdfplumber</div>
+      <div class="entry-body">
+        Extracts inter-agency coordination triples from the Virginia Beach Emergency Operations Plan using a closed LLM relation schema. Pipeline includes adaptive margin inference, unidecode normalization, abbreviation detection, and spaCy NER for entity filtering. Produces ~78 filtered triples from ~174 raw extractions.
+      </div>
+    </div>
+
+    <!-- <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">Healthcare Patient Analytics Dashboard</div>
+        <div class="entry-year"></div>
+      </div>
+      <div class="entry-sub">Python · SQL · Tableau · Excel · Random Forest</div>
+      <div class="entry-body">
+        Analyzed 50,000+ patient records to identify treatment patterns and demographic trends. Built a Random Forest model estimating patient readmission risk at <strong>85% accuracy</strong>. Delivered an interactive Tableau dashboard with executive KPIs, reducing hospital operational costs by <strong>15%</strong>.
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">Retail Q&amp;A Assistant with GenAI</div>
+        <div class="entry-year"></div>
+      </div>
+      <div class="entry-sub">LangChain · Google PaLM · Vector DB · Streamlit</div>
+      <div class="entry-body">
+        Built an interactive GenAI chatbot for a retail store using LangChain and Google PaLM, achieving <strong>90%+ accurate</strong> natural language query handling for real-time inventory insights. Implemented vector-based retrieval and few-shot prompting, boosting response relevance by <strong>40%</strong>.
+      </div>
+    </div> -->
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">Amazon Sentiment Analysis</div>
+        <div class="entry-year"></div>
+      </div>
+      <div class="entry-sub">Flask · Python · Scikit-Learn · BERT · Word2Vec</div>
+      <div class="entry-body">
+        Flask-based web app predicting customer review sentiment (Positive / Negative / Neutral) using three NLP models: TF-IDF + Logistic Regression, Word2Vec + SVM, and BERT + Logistic Regression. End-to-end pipeline covering preprocessing, feature extraction, model evaluation, and production deployment.
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="sec">
+    <div class="sec-title">Technical Skills</div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-label">Programming</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Shell</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">Machine Learning</div>
+        <div class="skill-tags">
+          <span class="skill-tag">TensorFlow</span>
+          <span class="skill-tag">PyTorch</span>
+          <span class="skill-tag">Scikit-learn</span>
+          <span class="skill-tag">XGBoost</span>
+          <span class="skill-tag">Random Forest</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">NLP &amp; AI</div>
+        <div class="skill-tags">
+          <span class="skill-tag">SetFit</span>
+          <span class="skill-tag">spaCy</span>
+          <span class="skill-tag">HuggingFace</span>
+          <span class="skill-tag">Ollama</span>
+          <span class="skill-tag">LangChain</span>
+          <span class="skill-tag">BERT</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">Databases &amp; Graphs</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Neo4j</span>
+          <span class="skill-tag">SQL Server</span>
+          <span class="skill-tag">Azure SQL</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">Snowflake</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">Cloud &amp; Data Eng.</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Azure (ADF, Databricks)</span>
+          <span class="skill-tag">AWS (S3, Redshift)</span>
+          <span class="skill-tag">Airflow</span>
+          <span class="skill-tag">Power BI</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">Scientific Computing</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Pandas</span>
+          <span class="skill-tag">NumPy</span>
+          <span class="skill-tag">GeoPandas</span>
+          <span class="skill-tag">NetworkX</span>
+          <span class="skill-tag">Matplotlib</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="sec">
+    <div class="sec-title">Certifications</div>
+
+    <div class="cert-row">
+      <span class="cert-name">DP-700: Microsoft Fabric Data Engineer Associate</span>
+      <span class="cert-issuer">Microsoft</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-name">Alteryx Core: Data Analytics and Preparation</span>
+      <span class="cert-issuer">Alteryx</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-name">IBM Data Analyst Specialization — SQL, Data Visualization, Excel, Generative AI</span>
+      <span class="cert-issuer">IBM / Coursera</span>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 Gayatri Vaidya &nbsp;·&nbsp; George Mason University &nbsp;·&nbsp; gvaidya2@gmu.edu
+  </footer>
+
+</div>
+
+<script>
+const secs = document.querySelectorAll('section[id]');
+const links = document.querySelectorAll('nav a.nl');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      links.forEach(l => l.classList.remove('active'));
+      const a = document.querySelector(`nav a.nl[href="#${e.target.id}"]`);
+      if (a) a.classList.add('active');
+    }
+  });
+}, { rootMargin: '-15% 0px -75% 0px' });
+secs.forEach(s => io.observe(s));
+
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const reveal = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in-view'); reveal.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  secs.forEach(s => reveal.observe(s));
+}
+</script>
+</body>
+</html>
